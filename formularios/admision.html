@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solicitud de admisión</title>
+    <script src="admision.js"></script>
+
+    <style>
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        label {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        fieldset {
+            background: rgb(236, 233, 233);
+            width: 350px;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .error {
+            background-color: #ff0000;
+        }
+
+        .correcto{
+            background-color: greenyellow;
+
+        }
+
+        .foco{
+            background-color: yellow;
+        }
+
+        .claro{
+            color: gainsboro;
+        }
+
+        .ok{
+            color: greenyellow;
+        }
+
+        .mal{
+            color: red;
+        }
+
+        input[type="reset"]{
+            margin: 0px 12px;
+            margin-top: 20px;
+            background-color: rgb(246, 209, 141);
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        input[type="submit"]{
+            margin: 0px 12px;
+            margin-top: 20px;
+            background-color: rgb(76, 76, 255);
+            border-radius: 10px;
+            padding: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="salida_visitas"></div>
+
+    <fieldset>
+        <legend><strong>Solicitud de admisión</strong></legend>
+        <form
+          name="formulario"
+          id="formulario"
+          action="http://www.google.es"
+          method="get"
+        >
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" />
+
+            <label for="pais">Nacionalidad:</label>
+            <select name="pais" id="pais">
+                <option value="0" selected="selected">Seleccione nacionalidad</option>
+                <option value="al">Alemana</option>
+                <option value="es">Española</option>
+                <option value="fr">Francesa</option>
+                <option value="mj">Mejicana</option>
+                <option value="ar">Argentina</option>
+            </select>
+
+            <label for="pass">Contraseña:</label>
+            <input type="password" name="pass" id="pass" />
+
+            <label for="pass_r">Repita contraseña:</label>
+            <input type="password" name="pass_r" id="pass_r" />
+            <button type="button" id="ver_pass">Ver contraseña</button>
+
+            <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+      </fieldset>
+
+      <div id="salida"></div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="planes.js"></script>
+    <style>
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        label {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+
+        fieldset {
+            background: rgb(236, 233, 233);
+            width: 350px;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .error {
+            background-color: #ff0000;
+        }
+
+        .correcto{
+            background-color: greenyellow;
+
+        }
+
+        .foco{
+            background-color: yellow;
+        }
+
+        .ok{
+            color: greenyellow;
+        }
+
+        .mal{
+            color: red;
+        }
+
+        input[type="reset"]{
+            margin: 20px 12px;
+            background-color: rgb(246, 209, 141);
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        input[type="submit"]{
+            margin: 20px 12px;
+            background-color: rgb(76, 76, 255);
+            border-radius: 10px;
+            padding: 5px;
+            color: white;
+        }
+    </style>
+    <title>Planes malvados</title>
+</head>
+<body>
+    <div id="salida_visitas"></div>
+
+    <fieldset>
+        <legend><strong>Planes malvados</strong></legend>
+        <form
+          name="formulario"
+          id="formulario"
+          action="http://www.google.es"
+          method="get"
+        >
+            <label for="nombre">Nombre del plan:</label>
+            <input type="text" name="nombre" id="nombre" minlength="3" maxlength="20" required/>
+
+            <label for="codigo">Código del plan:</label>
+            <!-- ^[a-zA-ZÇçÑñ]{1} Comienza por una letra, [0-9]{3,7}$ finalizando por números mínimo 3 y máximo 7-->
+            <input type="text" pattern="^[a-zA-ZÇçÑñ]{1}[0-9]{3,7}$" name="codigo" id="codigo" required/>
+
+            <label for="paises">Países:</label>
+            <input list="lista-paises" id="paises" name="paises">
+            <datalist id="lista-paises">
+                <option value="Estados Unidos">
+                <option value="Reino Unido">
+                <option value="Francia">
+                <option value="Alemania">
+                <option value="Suiza">
+            </datalist>
+            
+            <br><br><br><br>
+            <p>Tipo de plan:</p>
+            
+            <input type="radio" id="operaciones-campo" name="tipo-plan" value="operaciones-campo" required>
+            <label for="operaciones-campo">Operaciones en campo</label><br>
+
+            <input type="radio" id="manejo-recursos" name="tipo-plan" value="manejo-recursos" required>
+            <label for="manejo-recursos">Manejo de recursos financieros</label><br>
+
+            <input type="radio" id="desarrollo-tecnologia" name="tipo-plan" value="desarrollo-tecnologia" required>
+            <label for="desarrollo-tecnologia">Desarrollo de tecnología</label><br>
+
+            <input type="radio" id="luchas-poder-interno" name="tipo-plan" value="luchas-poder-interno" required>
+            <label for="luchas-poder-interno">Luchas de poder interno</label><br>
+
+            <input type="radio" id="operaciones-rescate" name="tipo-plan" value="operaciones-rescate" required>
+            <label for="operaciones-rescate">Operaciones de rescate</label><br>
+
+            <input type="radio" id="cifrado-descifrado" name="tipo-plan" value="cifrado-descifrado" required>
+            <label for="cifrado-descifrado">Cifrado y descifrado</label><br>
+
+            <input type="radio" id="operaciones-encubiertas" name="tipo-plan" value="operaciones-encubiertas" required>
+            <label for="operaciones-encubiertas">Operaciones encubiertas</label><br>
+
+            <input type="radio" id="contrainteligencia" name="tipo-plan" value="contrainteligencia" required>
+            <label for="contrainteligencia">Contrainteligencia</label><br>
+
+            <input type="radio" id="desinformacion-estrategica" name="tipo-plan" value="desinformacion-estrategica" required>
+            <label for="desinformacion-estrategica">Desinformación Estratégica</label><br>
+
+            <input type="reset" name="Borrar" id="Borrar" value="Borrar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+      </fieldset>
+
+      <div id="salida"></div>
+
+</body>
+</html>
